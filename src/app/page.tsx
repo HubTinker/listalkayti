@@ -17,22 +17,6 @@ interface Video {
 
 const VIDEOS: Video[] = [
   {
-    id: 1,
-    type: 'instagram',
-    originalUrl: 'https://www.instagram.com/reels/DP3LYtNCDbU/',
-    embedUrl: null,
-    title: 'Instagram Reel 1',
-    platform: 'Instagram'
-  },
-  {
-    id: 2,
-    type: 'instagram',
-    originalUrl: 'https://www.instagram.com/reels/DUdZkg_iMvF/',
-    embedUrl: null,
-    title: 'Instagram Reel 2',
-    platform: 'Instagram'
-  },
-  {
     id: 3,
     type: 'tiktok',
     originalUrl: 'https://www.tiktok.com/@edisashahini/video/7585313280596512022',
