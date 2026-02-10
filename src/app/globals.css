@@ -2,19 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Стили для скрытия скроллбара но сохранения возможности скролла */
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
-/* Плавные переходы */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Улучшение скролла */
 * {
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
 }
